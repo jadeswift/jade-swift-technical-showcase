@@ -1,0 +1,8 @@
+{
+  "bail": true,
+  "verbose": true,
+  "transform": {
+    "^.+\\.(ts|tsx|js|jsx)$": "babel-jest",
+    "^.+\\.[tj]sx?$": "babel-jest"
+  }
+}
