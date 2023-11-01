@@ -1,17 +1,4 @@
 import '@testing-library/jest-dom';
-import {server} from './__mocks__/api/server'
-import {api} from './api/api'
-import {setupStore} from './api/store'
+import {TextEncoder, TextDecoder} from 'util';
 
-const store = setupStore({});
-
-beforeAll(() => {
-    server.listen();
-});
-
-afterEach(() => {
-    server.resetHandlers();
-    store.dispatch(api.util.resetApiState());
-});
-
-afterAll(() => server.close());
+Object.assign(global, {TextDecoder, TextEncoder});
