@@ -7,6 +7,7 @@ import {Search} from "../common/components/Search";
 import {defaultFilterModel, FilterContext, FilterModel} from "../common/filter-context";
 import {searchHelper} from "../common/search-helper";
 import {RowFlexBox} from "../common/components/RoxFlexBox";
+import {ColumnFlexBox} from "../common/components/ColumnFlexBox";
 
 export const AlbumsWrapper: FC = () => {
     const {data, isLoading, isError} = useAlbumDataQuery();
@@ -21,11 +22,21 @@ export const AlbumsWrapper: FC = () => {
 
     return (
         <FilterContext.Provider value={{filterModel, setFilterModel}}>
-            <RowFlexBox justifyContent={'space-between'} alignItems={'baseline'} px={5} py={3} minWidth={'1000px'}>
-                <Typography variant={'h1'}>Albums</Typography>
-                <Search/>
-            </RowFlexBox>
-            <Albums albums={filteredAlbums} isError={isError} isLoading={isLoading}/>
+            <ColumnFlexBox justifyContent={'flex-start'}>
+                <RowFlexBox
+                    justifyContent={'space-between'}
+                    alignItems={'baseline'}
+                    px={5}
+                    py={3}
+                    minWidth={'1000px'}
+                    maxHeight={'160px'}
+                    minHeight={'160px'}
+                >
+                    <Typography variant={'h1'}>Albums</Typography>
+                    <Search/>
+                </RowFlexBox>
+                <Albums albums={filteredAlbums} isError={isError} isLoading={isLoading}/>
+            </ColumnFlexBox>
         </FilterContext.Provider>
     );
 };
