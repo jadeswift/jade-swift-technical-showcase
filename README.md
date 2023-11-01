@@ -6,7 +6,7 @@ This photo gallery app is built with react and typescript
 v14.15.5
 
 ❯ npm -v\
-6.14.11\
+6.14.11
 
 ## Available Scripts
 
