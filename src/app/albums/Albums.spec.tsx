@@ -6,6 +6,11 @@ import {Albums} from "./Albums";
 import {Album} from "../../models/album";
 
 describe('albums page tests', () => {
+    test('when is loading is true then shows loading', () => {
+        setupTest({isLoading: true});
+
+        expect(screen.getByText('Loading Albums...')).toBeInTheDocument();
+    });
     test('when is error is true then shows error', () => {
         setupTest({isError: true});
 

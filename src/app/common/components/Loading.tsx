@@ -1,7 +1,8 @@
 import React from 'react';
 import {Typography} from '@mui/material';
 import {ColumnFlexBox} from './ColumnFlexBox';
-import {ReactComponent as LoadingGif} from '../../../assets/loading.svg';
+
+const loading = require("../../../assets/loading.svg") as string;
 import {FCWithChildren} from "../fc-with-children";
 
 export const Loading: FCWithChildren = ({
@@ -14,7 +15,8 @@ export const Loading: FCWithChildren = ({
             alignSelf={'center'}
             aria-label={'loading'}
         >
-            <LoadingGif style={{width: 120}}/>
+            <img src={loading} style={{width: 120}} alt="loading" aria-label={'loading-animation'}/>
+
             {children && (
                 <Typography variant={'h3'} pt={1}>
                     {children}

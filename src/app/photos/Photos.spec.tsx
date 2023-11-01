@@ -6,6 +6,11 @@ import React from "react";
 import {ModelFactory} from "../../testing/model-factory";
 
 describe('photos page tests', () => {
+    test('when is loading is true then shows loading', () => {
+        setupTest({isLoading: true});
+
+        expect(screen.getByText('Loading Photos...')).toBeInTheDocument();
+    });
     test('when is error is true then shows error', () => {
         setupTest({isError: true});
 
