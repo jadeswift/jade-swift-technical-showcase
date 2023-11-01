@@ -27,3 +27,13 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.displayGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gridItem {
+    display: inline;
+    width: auto;
+}

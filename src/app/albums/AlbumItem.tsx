@@ -41,6 +41,6 @@ const Item = styled(Paper)(({theme}) => ({
     padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    maxWidth: 400,
-    width: 400
+    maxWidth: 300,
+    width: 300
 }));

@@ -5,7 +5,7 @@ import {Loading} from "../common/components/Loading";
 import {AlbumItem} from "./AlbumItem";
 import {Link} from "react-router-dom";
 import {Album} from "../../models/album";
-import {Typography} from "@mui/material";
+import {Box, Typography} from "@mui/material";
 
 export type AlbumsProps = {
     albums: Album[],
@@ -33,12 +33,12 @@ export const Albums: FCWithChildren<AlbumsProps> = ({
     }
 
     return (
-        <>
+        <Box className="displayGrid" padding={4}>
             {albums.map((album) => (
-                <Link to={`${album.id}/photos`} key={album.id} aria-label={'album'}>
+                <Link to={`${album.id}/photos`} key={album.id} aria-label={'album'} className="gridItem">
                     <AlbumItem album={album}/>
                 </Link>
             ))}
-        </>
+        </Box>
     );
 };
