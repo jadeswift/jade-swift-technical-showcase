@@ -15,11 +15,12 @@ export const PhotoHeader: FC<PhotoHeaderProps> = ({
     return (
         <ImageListItem key="Subheader" cols={5}>
             <ListSubheader component="div" sx={{backgroundColor: 'rgba(0,0,0,.4)', color: 'white'}}>
-                <RowFlexBox padding={2} justifyContent={'flex-start'}>
+                <RowFlexBox padding={2} justifyContent={'flex-start'}
+                            style={{overflow: "hidden", textOverflow: "ellipsis", maxWidth: '600px'}}>
                     <ColorButton onClick={clickHandler} variant="outlined" sx={{mr: 3}} name={'back button'}>
                         <ArrowBackIcon/>
                     </ColorButton>
-                    <Typography variant={'h4'}>{title}</Typography>
+                    <Typography noWrap variant={'h4'}>{title}</Typography>
                 </RowFlexBox>
             </ListSubheader>
         </ImageListItem>

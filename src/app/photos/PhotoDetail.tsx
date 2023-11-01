@@ -23,7 +23,7 @@ export const PhotoDetail: FC<PhotoDetailProps> = ({photo}) => {
     return (
         <>
             <ImageListItemBar
-                title={photo.title}
+                title={`[${photo.id}] ${photo.title}`}
                 actionIcon={
                     <IconButton
                         sx={{color: 'rgba(255, 255, 255, 0.54)'}}
@@ -53,7 +53,7 @@ export const PhotoDetail: FC<PhotoDetailProps> = ({photo}) => {
                 aria-label={`popover for ${photo.title}`}
             >
                 <Box sx={{backgroundColor: 'rgba(0,0,0,.4)', color: 'white'}}>
-                    <Typography p={3} align={'center'}>{photo.title}</Typography>
+                    <Typography p={3} align={'center'}>[{photo.id}] {photo.title}</Typography>
                     <img aria-label={'photo in popover'} src={photo.url} alt={photo.title}/>
                 </Box>
             </Popover>
