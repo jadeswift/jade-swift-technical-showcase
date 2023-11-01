@@ -29,6 +29,6 @@ export function renderWithNavigation(
 
     return {
         ...result,
-        history,
+        history
     };
 }
