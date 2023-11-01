@@ -18,22 +18,30 @@ export const Albums: FCWithChildren<AlbumsProps> = ({
                                                         isError,
                                                         isLoading
                                                     }) => {
-    if (isLoading) {
+    if (isLoading || !albums) {
         return (
-            <ColumnFlexBox>
-                <Loading>Loading Albums...</Loading>
-            </ColumnFlexBox>
+            <Loading>Loading Albums...</Loading>
         );
     }
 
     if (isError) {
         return (
-            <Typography variant={'h1'}>Something Went Wrong :(</Typography>
+            <ColumnFlexBox justifyContent={'start'}>
+                <Typography variant={'h4'}>Something Went Wrong :(</Typography>
+            </ColumnFlexBox>
+        )
+    }
+
+    if (albums?.length == 0) {
+        return (
+            <ColumnFlexBox justifyContent={'start'}>
+                <Typography variant={'h4'}>No albums match your search</Typography>
+            </ColumnFlexBox>
         )
     }
 
     return (
-        <Box className="displayGrid" padding={4}>
+        <Box className="displayGrid">
             {albums.map((album) => (
                 <Link to={`${album.id}/photos`} key={album.id} aria-label={'album'} className="gridItem">
                     <AlbumItem album={album}/>

@@ -16,6 +16,11 @@ describe('albums page tests', () => {
 
         expect(screen.getByText('Something Went Wrong :(')).toBeInTheDocument();
     });
+    test('when no albums to display then shows no albums matching search', () => {
+        setupTest({});
+
+        expect(screen.getByText('No albums match your search')).toBeInTheDocument();
+    });
     test('when rendered then albums are displayed', () => {
         const albums = ModelFactory.createMany(ModelFactory.createAlbum, 3);
         setupTest({albums})
