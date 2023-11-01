@@ -2,6 +2,12 @@
 
 This photo gallery app is built with react and typescript
 
+❯ node -v\
+v14.15.5
+
+❯ npm -v\
+6.14.11\
+
 ## Available Scripts
 
 In the project directory, you can run:
